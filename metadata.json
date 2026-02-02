@@ -1,0 +1,5 @@
+{
+  "name": "GeminiGram",
+  "description": "An AI-powered social media experience using Gemini to generate posts, captions, and intelligent interactions.",
+  "requestFramePermissions": []
+}
