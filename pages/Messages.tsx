@@ -1,9 +1,8 @@
-
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Conversation } from '../types';
 import { fetchConversations } from '../services/geminiService';
-import { Loader2, Search, ArrowLeft, MoreVertical, Edit3 } from 'lucide-react';
+import { Loader2, Search, ArrowLeft, Edit3 } from 'lucide-react';
 
 const Messages: React.FC = () => {
   const [conversations, setConversations] = useState<Conversation[]>([]);

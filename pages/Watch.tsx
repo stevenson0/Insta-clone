@@ -1,9 +1,8 @@
-
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Video, Comment, VideoInsights } from '../types';
 import { getVideoComments, getVideoInsights, searchVideos } from '../services/geminiService';
-import { ThumbsUp, ThumbsDown, Share2, Download, MoreHorizontal, Send, BrainCircuit, Sparkles, Loader2, ChevronDown, ChevronUp, Check } from 'lucide-react';
+import { ThumbsUp, ThumbsDown, Share2, Download, MoreHorizontal, BrainCircuit, Sparkles, Loader2, ChevronDown, ChevronUp, Check } from 'lucide-react';
 import VideoCard from '../components/VideoCard';
 
 const CommentItem: React.FC<{ 

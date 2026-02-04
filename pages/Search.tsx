@@ -1,9 +1,7 @@
-
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Post } from '../types';
 import { fetchFeedPosts } from '../services/geminiService';
-// Added Film to the imports from lucide-react
 import { Loader2, Search as SearchIcon, Film } from 'lucide-react';
 
 const SearchPage: React.FC = () => {
@@ -15,7 +13,7 @@ const SearchPage: React.FC = () => {
   useEffect(() => {
     const fetchResults = async () => {
       setLoading(true);
-      // For search, we simulate by fetching feed posts (in a real app, we'd query)
+      // For search, we simulate by fetching feed posts
       const results = await fetchFeedPosts();
       setPosts(results);
       setLoading(false);

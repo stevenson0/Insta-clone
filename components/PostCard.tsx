@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Heart, MessageCircle, Send, Bookmark, MoreHorizontal, Sparkles, Check } from 'lucide-react';
+import { Heart, MessageCircle, Send, Bookmark, MoreHorizontal, Sparkles } from 'lucide-react';
 import { Post, PostInsights } from '../types';
 import { getPostInsights } from '../services/geminiService';
 import { Link } from 'react-router-dom';
@@ -20,7 +19,7 @@ const PostCard: React.FC<{ post: Post }> = ({ post }) => {
   };
 
   const handleShare = () => {
-    // Construct sharing URL for a post (using current URL structure)
+    // Construct sharing URL for a post
     const shareUrl = `${window.location.origin}/#/profile/${post.username}`;
     navigator.clipboard.writeText(shareUrl).then(() => {
       setShowCopiedToast(true);

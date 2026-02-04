@@ -2,6 +2,7 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { Post, Comment, PostInsights, Story, Video, VideoInsights, Conversation, Message } from "../types";
 
+// Initialize the Google GenAI client with the API key from environment variables.
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 const POST_SCHEMA = {
@@ -285,10 +286,11 @@ export const getPostComments = async (caption: string): Promise<Comment[]> => {
   }
 };
 
+// Advanced reasoning tasks use gemini-3-pro-preview.
 export const getPostInsights = async (post: Post): Promise<PostInsights> => {
   try {
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
+      model: "gemini-3-pro-preview",
       contents: `Analyze this post: Caption: "${post.caption}". Location: "${post.location}". Provide a "vibe" description, 5 trending hashtags, and an engagement prediction (High/Medium/Low).`,
       config: {
         responseMimeType: "application/json",
@@ -350,10 +352,11 @@ export const getVideoComments = async (title: string): Promise<Comment[]> => {
   return getPostComments(`Video: ${title}`);
 };
 
+// Advanced reasoning tasks use gemini-3-pro-preview.
 export const getVideoInsights = async (video: Video): Promise<VideoInsights> => {
   try {
     const response = await ai.models.generateContent({
-      model: "gemini-3-flash-preview",
+      model: "gemini-3-pro-preview",
       contents: `Provide AI analysis for this video: Title: "${video.title}". Description: "${video.description}". Include summary, key takeaways, and sentiment.`,
       config: {
         responseMimeType: "application/json",

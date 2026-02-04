@@ -1,8 +1,7 @@
-
 import React from 'react';
-import { Video } from '../types';
-import { Link } from 'react-router-dom';
 import { MoreVertical } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Video } from '../types';
 
 const VideoCard: React.FC<{ video: Video, compact?: boolean }> = ({ video, compact }) => {
   if (compact) {

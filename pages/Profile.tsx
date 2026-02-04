@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Post, Video } from '../types';
 import { fetchUserPosts, fetchUserProfile, fetchFollowers, fetchUserReels } from '../services/geminiService';
-import { Loader2, Grid, UserSquare2, Bookmark, Film, X, Play, PlaySquare, Share2, Check } from 'lucide-react';
+import { Loader2, Grid, Film, X, Play, PlaySquare, Share2, Check, Bookmark } from 'lucide-react';
 
 type TabType = 'posts' | 'reels' | 'shorts' | 'bookmarks' | 'tagged';
 
